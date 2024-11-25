@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="/>
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./assets/img/apple-icon.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/compiled-tailwind.min.css"
+    />
+    <title>Chat App</title>
+  </head>
+  <body class="antialiased">
+    <div class="bg-gray-900 h-screen flex flex-col items-center justify-center text-center">
+      <div class="text-white">
+        <h1 class="text-4xl font-bold">Coming Soon</h1>
+        <p class="mt-4 text-lg">This page will display a list of all chat rooms once the project is connected to the database. Stay tuned!</p>
+      </div>
+      <div class="mt-2">
+        <div class="w-full mt-4 flex flex-row items-center justify-between">
+          <a href="/" class="h-fit cursor-pointer py-2 px-8 rounded-full bg-red-500 font-semibold text-white">
+            Home
+          </a>
+          <a id="random-link" class="h-fit cursor-pointer py-2 px-8 rounded-full bg-red-500 font-semibold text-white">
+            Chat
+          </a>
+        </div>
+        <p class="mt-2 text-gray-400 text-sm">Be the first to know when we launch!</p>
+      </div>
+    </div>    
+  </body>
+  <script>
+    function toggleNavbar(collapseID) {
+      document.getElementById(collapseID).classList.toggle("hidden");
+      document.getElementById(collapseID).classList.toggle("block");
+    }
+
+    function generateRandomString(length) {
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let result = '';
+        for (let i = 0; i < length; i++) {
+            result += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        return result;
+    }
+
+    // Generate a random string and set it as the href
+    const randomString = generateRandomString(8); // Length of the random string
+    const link = document.getElementById('random-link');
+    link.href = `/chat/${randomString}/`;
+  </script>
+</html>
